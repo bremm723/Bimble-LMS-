@@ -17,7 +17,7 @@ cat > /app/.env << "EOF"
 APP_NAME="Bimble LMS"
 APP_ENV=production
 APP_KEY=${APP_KEY}
-APP_DEBUG=false
+APP_DEBUG=true
 APP_URL=https://bremm723-bimbel-lms.hf.space
 
 LOG_CHANNEL=stderr
@@ -44,18 +44,24 @@ if [ -z "$APP_KEY" ]; then
     php artisan key:generate --force
 fi
 
-# ---- Setup Storage ----
-echo "Setting up storage..."
+# ---- Setup Storage & Database Permissions ----
+echo "Setting up storage and database permissions..."
 mkdir -p /app/storage/app/public
 mkdir -p /app/storage/framework/cache/data
 mkdir -p /app/storage/framework/sessions
 mkdir -p /app/storage/framework/views
 mkdir -p /app/storage/logs
-chmod -R 775 /app/storage /app/bootstrap/cache
-chown -R www-data:www-data /app/storage /app/bootstrap/cache
+
+# Memastikan folder database dan file SQLite internal terbentuk
+mkdir -p /app/database
+touch /app/database/database.sqlite
+
+# Berikan hak akses penuh (baca & tulis) ke folder storage, cache, dan database
+chmod -R 777 /app/storage /app/bootstrap/cache /app/database
+chown -R www-data:www-data /app/storage /app/bootstrap/cache /app/database /app/database/database.sqlite
+chmod 666 /app/database/database.sqlite
 
 # ---- Run database migration TERLEBIH DAHULU ----
-# (Langkah ini wajib jalan duluan supaya tabel 'cache' dibuat sebelum dibersihkan)
 echo "Running migrations..."
 php artisan migrate --force
 
