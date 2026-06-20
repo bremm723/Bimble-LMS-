@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space/api";
 
 interface User { id: number; name: string; email: string; }
 interface PaymentScheme { id: number; name: string; }
@@ -211,3 +211,4 @@ export default function InvoicesPage() {
     </div>
   );
 }
+

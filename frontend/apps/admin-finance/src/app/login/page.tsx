@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space/api";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -118,3 +118,4 @@ export default function LoginPage() {
     </div>
   );
 }
+

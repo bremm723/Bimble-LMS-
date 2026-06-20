@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space/api";
 
 interface ProfitLossData {
   period: { from: string; to: string };
@@ -189,3 +189,4 @@ export default function ReportsPage() {
     </div>
   );
 }
+

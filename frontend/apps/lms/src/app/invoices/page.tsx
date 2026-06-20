@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import { useMidtransSnap } from "../../hooks/useMidtransSnap";
 import type { MidtransResult } from "../../hooks/useMidtransSnap";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space/api";
 
 interface PaymentScheme {
   id: number;
@@ -281,3 +281,4 @@ export default function InvoicesPage() {
     </div>
   );
 }
+

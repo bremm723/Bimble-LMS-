@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space/api";
 
 interface FinanceDashboard {
   overdue: { count: number; amount: number };
@@ -194,3 +194,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+

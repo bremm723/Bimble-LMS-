@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef } from "react";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space/api";
 
 // Extend Window to include snap
 declare global {
@@ -152,3 +152,4 @@ export function useMidtransSnap(): UseMidtransSnapReturn {
     isSnapLoaded: snapLoadedRef.current,
   };
 }
+
