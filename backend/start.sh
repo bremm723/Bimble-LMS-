@@ -12,13 +12,13 @@ if [ ! -f /app/.env ]; then
 fi
 
 # Override nilai penting dari env HuggingFace Secrets
-# (Set variabel-variabel ini di Settings > Secrets di HF Space Anda)
+# Menggunakan "EOF" agar tanda $ pada variabel dibaca dengan benar oleh builder
 cat > /app/.env << "EOF"
 APP_NAME="Bimble LMS"
 APP_ENV=production
 APP_KEY=${APP_KEY}
 APP_DEBUG=false
-APP_URL=https://bremm723-bimble-lms.hf.space
+APP_URL=https://bremm723-bimbel-lms.hf.space
 
 LOG_CHANNEL=stderr
 LOG_LEVEL=error
@@ -54,18 +54,19 @@ mkdir -p /app/storage/logs
 chmod -R 775 /app/storage /app/bootstrap/cache
 chown -R www-data:www-data /app/storage /app/bootstrap/cache
 
-# ---- Clear dan cache ulang config ----
-echo "Clearing and caching config..."
-php artisan config:clear
-php artisan cache:clear
-
-# ---- Run database migration ----
+# ---- Run database migration TERLEBIH DAHULU ----
+# (Langkah ini wajib jalan duluan supaya tabel 'cache' dibuat sebelum dibersihkan)
 echo "Running migrations..."
 php artisan migrate --force
 
 # ---- Run seeder jika database kosong ----
 echo "Seeding database if empty..."
 php artisan db:seed --force 2>/dev/null || echo "Seeding skipped (already seeded or no seeders)"
+
+# ---- Clear dan cache ulang config ----
+echo "Clearing and caching config..."
+php artisan config:clear
+php artisan cache:clear
 
 # ---- Start PHP-FPM ----
 echo "Starting PHP-FPM..."
