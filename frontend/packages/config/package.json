@@ -1,0 +1,15 @@
+{
+  "name": "@bimbel/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "files": ["tsconfig.base.json", "tailwind.config.ts", "next.config.base.mjs"],
+  "exports": {
+    "./next.config.base.mjs": "./next.config.base.mjs",
+    "./tailwind.config.ts": "./tailwind.config.ts",
+    "./tsconfig.base.json": "./tsconfig.base.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}

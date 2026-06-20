@@ -1,0 +1,20 @@
+{
+  "name": "bimbel-platform",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.0",
+    "turbo": "^2.5.0"
+  },
+  "packageManager": "npm@11.8.0"
+}
