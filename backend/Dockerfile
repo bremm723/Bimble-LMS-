@@ -7,6 +7,7 @@ RUN apk add --no-cache \
     git \
     curl \
     sqlite \
+    sqlite-dev \
     shadow \
     libpng-dev \
     oniguruma-dev \
