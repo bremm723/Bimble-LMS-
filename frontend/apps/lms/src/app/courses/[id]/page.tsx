@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { use } from "react";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space";
 
 interface Material {
   id: number;

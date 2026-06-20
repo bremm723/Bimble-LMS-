@@ -25,7 +25,7 @@ const navLinks = [
   )},
 ];
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://bremm723-bimble-lms.hf.space";
 
 export function AdminSidebar() {
   const [user, setUser] = useState<{ name: string; role: string } | null>(null);
