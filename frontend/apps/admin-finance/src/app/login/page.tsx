@@ -113,12 +113,6 @@ export default function LoginPage() {
               )}
             </button>
           </form>
-
-          <div className="mt-6 rounded-lg bg-neutral-50 p-3 text-xs text-neutral-500">
-            <p className="font-medium text-neutral-700">Demo accounts:</p>
-            <p className="mt-1">admin@bimbel.co.id / password (Super Admin)</p>
-            <p>admin.cabang@bimbel.co.id / password (Admin Cabang)</p>
-          </div>
         </div>
       </div>
     </div>

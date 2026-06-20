@@ -71,7 +71,10 @@ async function request<T>(endpoint: string, options: RequestOptions = {}): Promi
 
   // Auto-attach auth token
   const token = getToken();
-  const authHeaders: Record<string, string> = {};
+  const authHeaders: Record<string, string> = {
+    "Bypass-Tunnel-Reminder": "true",
+    "ngrok-skip-browser-warning": "true"
+  };
   if (token) {
     authHeaders["Authorization"] = `Bearer ${token}`;
   }

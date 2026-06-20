@@ -125,12 +125,7 @@ export default function LoginPage() {
           </form>
 
           {/* Help text */}
-          <div className="mt-6 rounded-lg bg-neutral-50 p-3 text-xs text-neutral-500">
-            <p className="font-medium text-neutral-700">Demo accounts:</p>
-            <p className="mt-1">admin@bimbel.co.id / password (Super Admin)</p>
-            <p>tutor@bimbel.co.id / password (Tutor)</p>
-            <p>siswa@bimbel.co.id / password (Siswa)</p>
-          </div>
+
 
           {/* Register link */}
           <p className="mt-4 text-center text-sm text-neutral-500">

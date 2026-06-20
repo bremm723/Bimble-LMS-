@@ -13,3 +13,5 @@ bootstrap/cache/
 .phpunit.cache
 *.log
 .DS_Store
+ngrok.exe
+ngrok.yml
