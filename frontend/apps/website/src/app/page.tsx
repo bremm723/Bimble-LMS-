@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@bimbel/ui";
 
-const LMS_URL = process.env.NEXT_PUBLIC_LMS_URL || "https://bimble-lms-admin.vercel.app/";
+const LMS_URL = process.env.NEXT_PUBLIC_LMS_URL || "https://bimble-lms-mwkw.vercel.app";
 
 export default function HomePage() {
   const [contactForm, setContactForm] = useState({ nama: "", email: "", pesan: "" });
