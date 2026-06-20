@@ -13,7 +13,7 @@ fi
 
 # Override nilai penting dari env HuggingFace Secrets
 # (Set variabel-variabel ini di Settings > Secrets di HF Space Anda)
-cat > /app/.env << EOF
+cat > /app/.env << "EOF"
 APP_NAME="Bimble LMS"
 APP_ENV=production
 APP_KEY=${APP_KEY}
